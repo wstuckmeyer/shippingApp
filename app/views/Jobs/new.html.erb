@@ -1,10 +1,6 @@
 <h1>new Jobs</h1>
 
 <%= form_for :job, url: jobs_path do |f| %>
-			<% if @job.error.any? %>
-				<% @job.error.full_messages.each do |msg| %>
-					<div class="alert alert-danger"><%= msg %></div>
-			<% end %>
 	<p>
 		<%= f.label :description %><br>
 		<%= f.text_field :containers %><br>
