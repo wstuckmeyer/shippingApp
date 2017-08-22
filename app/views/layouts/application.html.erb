@@ -14,24 +14,19 @@
   <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3 col-lg-2" id='nav'>
-       <div id="sidebar-wrapper">
-            <ul class="sidebar-nav">
-                <li class="sidebar-brand">
-                    <a href="#">
-                        Ship It
-                    </a>
-                </li>
-                <li>
-                    <a href="#">Dashboard</a>
-                </li>
-                <li>
-                    <a href="#">Jobs</a>
-                </li>
-                <li>
-                    <a href="#">Ships</a>
-                </li>
-            </ul>
-        </div>
+      
+		<div class="row-offcanvas row-offcanvas-left">
+		  <div id="sidebar" class="sidebar-offcanvas">
+		      <div class="col-md-12">
+		        <h3>Ship It</h3>
+		        <ul class="nav nav-pills nav-stacked">
+		          <li><a href="#">Dashboard</a></li>
+		          <li><a href="#">Ships</a></li>
+		          <li><a href="#">Jobs</a></li>
+		        </ul>
+		      </div>
+		  </div>
+    </div>
     </div>
     <div class="col-sm-9 col-lg-10">
      <%= yield %>
