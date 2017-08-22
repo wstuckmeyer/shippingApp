@@ -1,9 +1,11 @@
 class ShipsController < ApplicationController
 	def index
+			@ship = Job.all
 
 		end
 
 		def new 
+			@ship = Ship.new
 
 		end
 
