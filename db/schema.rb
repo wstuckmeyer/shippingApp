@@ -16,9 +16,10 @@ ActiveRecord::Schema.define(version: 20170822181838) do
     t.string "description"
     t.string "origin"
     t.string "destination"
-    t.decimal "cost"
+    t.integer "cost"
     t.integer "containersNeeded"
     t.string "name"
+    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

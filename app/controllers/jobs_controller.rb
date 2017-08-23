@@ -1,26 +1,27 @@
 class JobsController < ApplicationController
 		def index
-			@job = Job.all
+			
 
 		end
 
 		def new 
-			@job = Job.new
+			Job.new
 
 		end
 
 		def show
-			@job = Job.find(params[:id])
+			# @job = Job.find(params[:id])
+
 
 		end
 
 		def edit
-			@job = Job.find(params[:id])
+			# @job = Job.find(params[:id])
 			
 		end
 
 		def update
-    	 @job = Job.find(params[:id])
+    	 # @job = Job.find(params[:id])
  
     if @job.update(job_params)
       		redirect_to @job
@@ -30,25 +31,19 @@ class JobsController < ApplicationController
   end
 
 		def destroy
-		   @job = Job.find(params[:id])
+		   # @job = Job.find(params[:id])
 		   @job.destroy
 		 
 		  		redirect_to jobs_path
 		end
 
 		def create
-				@job = Job.new(job_params)
+				Job.create(description: params[:job][:description], name: params[:job][:name], origin: params[:job][:origin], destination: params[:job][:destination], cost: params[:job][:cost], containersNeeded: params[:job][:containersNeeded], user_id: current_user.id)
 
-				if @job.save
-					redirect_to @job
-			else
-    			render 'new'
+				redirect_to jobs_path
   		end
-		end
+		
 
-		def job_params 
-				params.require(:job).permit(:name, :description, :origin, :destination, :cost, :containersNeeded)
-
-	end
+		
 end
 

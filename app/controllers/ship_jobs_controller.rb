@@ -8,7 +8,7 @@ class ShipJobsController < ApplicationController
 		end
 
 		def show
-				@shipjob = Shipjob.find(params[:id])
+				# @shipjob = Shipjob.find(params[:id])
 
 		end
 
@@ -25,18 +25,11 @@ class ShipJobsController < ApplicationController
 		end
 
 		def create
-				@shipjob = Shipjob.new(shipjob_params)
-
-				if @shipjob.save
-				redirect_to @ship
-			else
-    			render 'new'
-  		end
+				ShipJob.create(ship_id: params[:ship_job][:ship_id], job_id: params[:ship_job][:job_id])
+				redirect_to jobs_path
+				
 		end
 
-		def shipjob_params 
-				params.require(:shipjob).permit(:ship_id, :job_id)
-
-	end
+		
 end
 

@@ -3,7 +3,7 @@
 <%= form_for :job, url: jobs_path do |f| %>
 	<p>
 		<%= f.label :description %><br>
-		<%= f.text_field :containers %><br>
+		<%= f.text_field :description%><br>
 	</p>
 	<p>
 		<%= f.label :origin %><br>
@@ -16,7 +16,7 @@
 	
 		<p>
 		<%= f.label :cost %><br>
-		<%= f.text_field :cost %><br>
+		<%= f.number_field :cost %><br>
 	</p>
 
 		<p>

@@ -8,7 +8,7 @@ class ShipsController < ApplicationController
 		end
 
 		def show
-				@ship = Ship.find(params[:id])
+				# @ship = Ship.find(params[:id])
 
 		end
 
@@ -25,13 +25,14 @@ class ShipsController < ApplicationController
 		end
 
 		def create
-				@ship = Ship.new(ship_params)
-
-				if @ship.save
-				redirect_to @ship
-			else
-    			render 'new'
-  		end
+				# @ship = Ship.new(ship_params)
+				Ship.create(name: params[:ship][:name], containers: params[:ship][:containers], location: params[:ship][:location], user_id: current_user.id)
+			# 	if @ship.save
+			# 	redirect_to @ship
+			# else
+   #  			render 'new'
+  	# 	end
+  		redirect_to ships_path
 		end
 
 		def ship_params 

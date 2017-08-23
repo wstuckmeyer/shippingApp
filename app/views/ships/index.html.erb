@@ -1,1 +1,9 @@
-<h1>new Ships</h1>
+<h1>Your Ships <%=link_to "Add Ship", new_ship_path%></h1>
+
+<%current_user.ships.each do |t|%>
+ <div class='col-lg-2'>
+	
+ 		<h1><%=t.name%><br><%=t.containers%><br><%=t.location%></h1>
+	
+ </div>
+  <%end%>
