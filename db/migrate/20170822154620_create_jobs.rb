@@ -4,9 +4,11 @@ class CreateJobs < ActiveRecord::Migration[5.1]
       t.string :description
       t.string :origin
       t.string :destination
-      t.decimal :cost
+      t.integer :cost
       t.integer :containersNeeded
       t.string :name
+      t.integer :user_id
+
 
       t.timestamps
     end

@@ -12,18 +12,20 @@
   <div class="container-fluid">
   <div class="row">
     <div class="col-sm-3 col-lg-2" id='nav'>
-      
+      <% if user_signed_in? %>
 		<div class="row-offcanvas row-offcanvas-left">
 		  <div id="sidebar" class="sidebar-offcanvas">
 		      <div class="col-md-12">
 		        <h3>Ship It</h3>
 		        <ul class="nav nav-pills nav-stacked">
-		          <li><a href="#">Dashboard</a></li>
-		          <li><a href="#">Ships</a></li>
-		          <li><a href="#">Jobs</a></li>
+		          <li class="<%= 'active' if current_page?(user_path(current_user)) %>"><%= link_to "Dashboard", user_path(current_user)%></li>
+		          <li class="<%= 'active' if current_page?(url_for(:ships)) %>"><%= link_to "Ships", url_for(:ships)%></li>
+		          <li class="<%= 'active' if current_page?(job_path(current_user)) %>"><%= link_to "Jobs", job_path(current_user)%></li>
+		          <li ><%=link_to "Logout", destroy_user_session_path, method: :delete%></li> 
 		        </ul>
 		      </div>
 		  </div>
+		<%end%>
     </div>
     </div>
     <div class="col-sm-9 col-lg-10">

@@ -2,6 +2,12 @@
 
 <%= form_for :job, url: jobs_path do |f| %>
 
+	<p>
+		<%= f.label :description %><br>
+		<%= f.text_field :description%><br>
+	</p>
+
+
 		<% if @job.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -16,6 +22,7 @@
     </div>
   <% end %>
 	
+
 	<p>
 		<%= f.label :origin %><br>
 		<%= f.text_field :origin %><br>
@@ -27,7 +34,7 @@
 	
 		<p>
 		<%= f.label :cost %><br>
-		<%= f.text_field :cost %><br>
+		<%= f.number_field :cost %><br>
 	</p>
 
 		<p>
