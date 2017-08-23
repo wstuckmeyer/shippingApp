@@ -5782,4 +5782,12 @@ button.close {
     display: none !important;
   }
 }
-/*# sourceMappingURL=bootstrap.css.map */
+#flashes {
+  text-align: center;
+  color: #dd1a41;
+}
+
+/*.alert-box {
+  margin-left: 50%;
+}
+*//*# sourceMappingURL=bootstrap.css.map */
