@@ -5,6 +5,7 @@ class ShipsController < ApplicationController
 		end
 
 		def new 
+			@ship = Ship.new
 
 		end
 
