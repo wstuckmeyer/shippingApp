@@ -1,9 +1,11 @@
 class ShipsController < ApplicationController
 	def index
+		  @ship = Ship.all
 
 		end
 
 		def new 
+			 @ship = Ship.new
 
 		end
 
@@ -13,15 +15,26 @@ class ShipsController < ApplicationController
 		end
 
 		def edit
+				@ship = Ship.find(params[:id])
 			
 		end
 
 		def update
-			
-		end
+			  @ship= Ship.find(params[:id])
+			 
+			  if @ship.update(ship_params)
+			    redirect_to @ship
+			  else
+			    render 'show'
+ 		 end
+	end
 
-		def destroy
 			
+		def destroy
+			  @ship = Ship.find(params[:id])
+			  @ship.destroy
+			 
+			  redirect_to ships_path
 		end
 
 		def create
