@@ -1,0 +1,41 @@
+<h1>Editing Jobs</h1>
+
+<%= form_for(@job) do |f| %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+ 
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :origin %><br>
+    <%= f.text_field :origin %>
+  </p>
+
+  <p>
+    <%= f.label :destination %><br>
+    <%= f.text_field :destination %>
+  </p>
+
+  <p>
+    <%= f.label :cost %><br>
+    <%= f.text_field :cost %>
+  </p>
+
+  <p>
+    <%= f.label :containersNeeded %><br>
+    <%= f.text_field :containersNeeded %>
+  </p>
+
+   <p>
+    <%= f.submit 'Edit Jobs'%>
+  </p>
+
+<% end %>
+
+<%= link_to 'Job Lists', jobs_path %> | <%= link_to 'Delete Job', @job, method: :delete, data: { confirm: 'Are you sure want to delete this job?' } %>

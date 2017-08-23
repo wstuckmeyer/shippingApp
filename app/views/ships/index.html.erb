@@ -1,5 +1,5 @@
 
-<h1>List ship</h1>
+<h1>List ships</h1>
 
  <table>
   <thead>
@@ -18,12 +18,11 @@
         <td><%= ship.containers %></td>
         <td><%= ship.location %></td>
         <td><%= ship.user_id %></td>
-        <td><%= link_to 'Show', ship %></td>
-        <td><%= link_to 'Edit', edit_ship_path(ship) %></td>
-        <td><%= link_to 'Delete', ship, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ship details', ship %> </td> 
+        <td><%= link_to 'Edit', edit_ship_path(ship) %> </td> 
+        <td><%= link_to 'Delete', ship, method: :delete, data: { confirm: 'Are you sure want to delete this ship?' } %> </td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<h2><%= @createvenue.name %></h2>

@@ -16,6 +16,7 @@ class JobsController < ApplicationController
 		end
 
 		def edit
+			@job = Job.find(params[:id])
 
 			
 		end
@@ -26,7 +27,7 @@ class JobsController < ApplicationController
     if @job.update(job_params)
       		redirect_to @job
     else
-      		render 'edit'
+      		render 'show'
     end
   end
 
@@ -43,7 +44,7 @@ class JobsController < ApplicationController
 				if @job.save
 					redirect_to @job
 			else
-    			render 'new'
+    			render 'show'
   		end
 		end
 
