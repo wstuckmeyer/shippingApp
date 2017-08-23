@@ -1,9 +1,33 @@
+
 <h1>Your Ships <%=link_to "Add Ship", new_ship_path%></h1>
 
-<%current_user.ships.each do |t|%>
- <div class='col-lg-2'>
-	
- 		<h1><%=t.name%><br><%=t.containers%><br><%=t.location%></h1>
-	
- </div>
-  <%end%>
+
+
+<h1>List ships</h1>
+
+ <table>
+  <thead>
+    <tr>
+      <th>Containers</th><br />
+      <th>Location</th><br />
+      <th>User ID</th><br />
+      <th colspan="3"></th><br />
+    </tr>
+  </thead>
+
+  <tbody>
+    <% current_user.ships.each do |ship| %>
+      <tr>
+        <td><%= ship.name %></td>
+        <td><%= ship.containers %></td>
+        <td><%= ship.location %></td>
+        <td><%= ship.user_id %></td>
+        <td><%= link_to 'Ship details', ship %> </td> 
+        <td><%= link_to 'Edit', edit_ship_path(ship) %> </td> 
+        <td><%= link_to 'Delete', ship, method: :delete, data: { confirm: 'Are you sure want to delete this ship?' } %> </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

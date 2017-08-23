@@ -1,1 +1,23 @@
-<h1>no</h1>
+
+<p>
+  <strong>Name:</strong>
+  <%= @ship.name %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @ship.location %>
+</p>
+
+<p>
+  <strong>User ID:</strong>
+  <%= @ship.user_id %>
+</p>
+
+<p>
+  <strong>Assinged Containers:</strong>
+  <%= @ship.containers%>
+</p>
+ 
+<%= link_to 'Ship Lists', ships_path %> | <%= link_to 'Delete Ship', @ship, method: :delete, data: { confirm: 'Are you sure want to delete this ship?' } %>
+

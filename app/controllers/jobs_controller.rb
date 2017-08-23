@@ -1,4 +1,5 @@
 class JobsController < ApplicationController
+	
 		def index
 			
 
@@ -16,7 +17,10 @@ class JobsController < ApplicationController
 		end
 
 		def edit
-			# @job = Job.find(params[:id])
+
+			@job = Job.find(params[:id])
+
+
 			
 		end
 
@@ -26,7 +30,7 @@ class JobsController < ApplicationController
     if @job.update(job_params)
       		redirect_to @job
     else
-      		render 'edit'
+      		render 'show'
     end
   end
 
@@ -41,6 +45,7 @@ class JobsController < ApplicationController
 				Job.create(description: params[:job][:description], name: params[:job][:name], origin: params[:job][:origin], destination: params[:job][:destination], cost: params[:job][:cost], containersNeeded: params[:job][:containersNeeded], user_id: current_user.id)
 
 				redirect_to jobs_path
+
   		end
 		
 
