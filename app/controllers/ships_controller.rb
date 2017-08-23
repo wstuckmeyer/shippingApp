@@ -1,6 +1,6 @@
 class ShipsController < ApplicationController
 	def index
-			@ship = Job.all
+		@ship = Ship.all
 
 		end
 
