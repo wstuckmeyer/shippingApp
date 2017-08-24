@@ -15,11 +15,13 @@
 			<%= f.select :location,["New York", "Miami", "Beijing", "Sydney"] %><br>
 		</p>
 		<p>
+
 			<%= f.label :Image%><br>
 			<%= f.file_field :avatar%>
 		</p>
 		<p>
-			<%= f.submit %>
+			<%= f.submit method: :new, data: { confirm: 'Are you sure want add this ship?' } %>
+
 		</p>
 
 <% end %>
