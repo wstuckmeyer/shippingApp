@@ -4,4 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 	has_many :ships
+	has_many :jobs
+
+	validates :name, uniqueness: true
 end

@@ -3,33 +3,12 @@
 <%= form_for :job, url: jobs_path do |f| %>
 
 	<p>
-		<%= f.label :description %><br>
-		<%= f.text_field :description%><br>
-	</p>
-
-
-		<% if @job.errors.any? %>
-    <div id="error_explanation">
-      <h2>
-        <%= pluralize(@job.errors.count, "error") %> prohibited
-        this article from being saved:
-      </h2>
-      <ul>
-        <% @job.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-	
-
-	<p>
 		<%= f.label :origin %><br>
-		<%= f.text_field :origin %><br>
+		<%= f.select :origin, ['Sydney', 'Boston', 'Beijing', 'New York'], include_blank: true %><br>
 	</p>
 	<p>
 		<%= f.label :destination %><br>
-		<%= f.text_field :destination %><br>
+		<%= f.select :destination, ['Sydney', 'Boston', 'Beijing', 'New York'], include_blank: true %><br>
 	</p>
 	
 		<p>
@@ -38,8 +17,8 @@
 	</p>
 
 		<p>
-		<%= f.label :containersNeeded %><br>
-		<%= f.text_field :containersNeeded %><br>
+		<%= f.label :Containers_Needed_for_Job %><br>
+		<%= f.number_field :containersNeeded %><br>
 	</p>
 
 		<p>

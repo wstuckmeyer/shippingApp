@@ -1,32 +1,18 @@
-<h1>List Jobs</h1>
+<h1>Your Jobs | <%=link_to "Add Job", new_job_path%></h1>
 
- <table>
-  <thead>
-    <tr>
-      <th>Name</th><br />
-      <th>Description</th><br />
-      <th>Origin</th><br />
-      <th>Destination</th><br />
-      <th>Cost</th><br />
-       <th>Containers Needed</th><br />
-      <th colspan="3"></th><br />
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @job.each do |job| %>
-      <tr>
-        <td><%= job.name %></td>
-        <td><%= job.description %></td>
-        <td><%= job.origin %></td>
-        <td><%= job.destination %></td>
-        <td><%= job.cost %></td>
-        <td><%= job.containersNeeded %></td>
-        <td><%= link_to 'Job details', job %> </td> 
-        <td><%= link_to 'Edit', edit_job_path(job) %> </td> 
-        <td><%= link_to 'Delete', job, method: :delete, data: { confirm: 'Are you sure want to delete this job?' } %> </td>
-      </tr>
+ 
+    <% current_user.jobs.each do |t| %>
+    <!--finds out the amount of containers needed based on how many are already assigned -->
+      <%@contains = 0 %>
+      <% t.ship_jobs.each do |n| %>
+        <% @ships = Ship.where(id: n.ship_id).first%>
+        <%@contains = t.containersNeeded - @ships.containers%>
+        <%puts @contains%>
+      <%end%>
+      <div class='col-lg-2'>
+        <h1><%= link_to t.name, t  %></h1>
+        <h6>Origin: <%= t.origin %></h6>
+        <h6>Destination: <%= t.destination %></h6>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
+ 

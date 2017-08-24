@@ -1,6 +1,5 @@
-
+<h1><%=current_user.name%></h1>
 <div class='row'>
-	<h1 id='name'><%=current_user.name%></h1>
 	<div class='col-lg-5' id='ships'>
 		<h1>Ships</h1>
 		<% current_user.ships.each do |t|%>
@@ -8,10 +7,19 @@
 			<h2><%=t.name%></h2>
 			<h4>Containers:<br> <%=t.containers%></h4>
 			<h4>Location:<br> <%=t.location%></h4>
+			---------------
 		</div>
 		<%end%>
 	</div>
 	<div class='col-lg-5' id='jobs'>
 		<h1>Jobs</h1>
+		<% current_user.jobs.each do |t|%>
+		<div class='jobsAll'>
+			<h2><%=t.name%></h2>
+			<h4>Origin:<br><%=t.origin%></h4>
+			<h4>Destination:<br><%=t.destination%></h4>
+			----------------
+		</div>
+		<%end%>
 	</div>
 </div>

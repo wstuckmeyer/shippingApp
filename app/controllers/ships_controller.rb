@@ -15,7 +15,7 @@ class ShipsController < ApplicationController
 		end
 
 		def edit
-				@ship = Ship.find(params[:id])
+				# @ship = Ship.find(params[:id])
 			
 		end
 
@@ -39,7 +39,7 @@ class ShipsController < ApplicationController
 
 		def create
 				# @ship = Ship.new(ship_params)
-				Ship.create(name: params[:ship][:name], containers: params[:ship][:containers], location: params[:ship][:location], user_id: current_user.id)
+				Ship.create(name: params[:ship][:name], containers: params[:ship][:containers], location: params[:ship][:location], avatar: params[:ship][:avatar], user_id: current_user.id)
 			# 	if @ship.save
 			# 	redirect_to @ship
 			# else
