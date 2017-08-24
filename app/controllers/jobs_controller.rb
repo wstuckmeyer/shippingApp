@@ -11,7 +11,11 @@ class JobsController < ApplicationController
 		end
 
 		def show
-			# @job = Job.find(params[:id])
+			@job = Job.find(params[:id])
+			@contains = @job.containersNeeded
+			@total = 0 
+			@final = 0
+			
 
 
 		end

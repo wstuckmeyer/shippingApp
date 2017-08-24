@@ -12,4 +12,6 @@ class ApplicationController < ActionController::Base
   session[:id] = current_user.id
   user_path(resource)
   end
+
 end
+

@@ -1,5 +1,5 @@
-<h1>Editing Ships</h1>
-
+<h1>Edit Ships</h1>
+<% @ship = Ship.find(params[:id])%>
 <%= form_for(@ship) do |f| %>
  
   <p>

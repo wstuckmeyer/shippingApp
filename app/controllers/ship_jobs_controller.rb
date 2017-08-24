@@ -25,8 +25,15 @@ class ShipJobsController < ApplicationController
 		end
 
 		def create
-				ShipJob.create(ship_id: params[:ship_job][:ship_id], job_id: params[:ship_job][:job_id])
-				redirect_to jobs_path
+		@shipjob = ShipJob.create(ship_id: params[:ship_job][:ship_id], job_id: params[:ship_job][:job_id])
+				
+
+				if @shipjob.save
+					redirect_to jobs_path
+				else
+					flash[:notice]="Ship has already been added to this job."
+					render :new
+				end
 				
 		end
 

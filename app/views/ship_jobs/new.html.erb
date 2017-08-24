@@ -1,5 +1,5 @@
 <h1>new Jobs</h1>
-
+<%= flash[:notice] %>
 <%= form_for :ship_job, url: ship_jobs_path, method: :post do |f| %>
 <% @ships = Ship.where(user_id: current_user.id)%>
 <% @jobs = Job.where(user_id: current_user.id)%>
