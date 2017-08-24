@@ -5785,6 +5785,10 @@ button.close {
 
 #flashes {
   text-align: center;
-  color: red;
+  color: #dd1a41;
 }
-/*# sourceMappingURL=bootstrap.css.map */
+
+/*.alert-box {
+  margin-left: 50%;
+}
+*//*# sourceMappingURL=bootstrap.css.map */

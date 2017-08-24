@@ -1949,3 +1949,20 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
   })
 
 }(jQuery);
+
+jQuery ->
+  $(document).on "touchstart.alert click.alert", ".growlyflash", (e) ->
+    e.stopPropagation()
+    ($ @).alert 'close'
+    off
+
+//     $(".alert-box ").delay(4000).slideUp(200, function() {
+//     $(this).alert('close');
+// });
+// $(".alert-dismissible").fadeTo(2000, 500).slideUp(500, function(){
+//     $(".alert-dismissible").alert('close');
+// });
+
+// $("#flashbox").fadeTo(2000, 500).slideUp(500, function(){
+//     $("#flashbox").slideUp(500);
+// });
